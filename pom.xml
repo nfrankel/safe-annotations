@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ch.frankel</groupId>
+    <artifactId>safe-annotations</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <developers>
+        <developer>
+            <name>Nicolas Fränkel</name>
+            <email>nicolas@frankel.ch</email>
+        </developer>
+    </developers>
+    <properties>
+        <kotlin.version>1.0.3</kotlin.version>
+    </properties>
+    <build>
+        <sourceDirectory>src/main/kotlin</sourceDirectory>
+        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <scm>
+        <connection>scm:git:https://github.com/nfrankel/safe-annotations.git</connection>
+        <developerConnection>scm:git:git@github.com:nfrankel/safe-annotations.git</developerConnection>
+        <url>https://github.com/nfrankel/safe-annotations.git</url>
+        <tag>HEAD</tag>
+    </scm>
+    <distributionManagement>
+        <repository>
+            <id>bintray-nfrankel-maven</id>
+            <url>https://api.bintray.com/maven/nfrankel/maven/safe-annotations;publish=1</url>
+        </repository>
+    </distributionManagement>
+</project>
